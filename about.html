@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Laura Schneider Fine Art | About</title>
+
+  <meta
+    name="description"
+    content="Artist statement and biography of Laura Schneider."
+  >
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="icons/favicon.png"
+  >
+</head>
+
+<body>
+
+<header>
+
+  <a
+    href="index.html"
+    class="logo"
+  >
+    <img
+      src="icons/lauralogo.png"
+      alt="Laura Schneider Fine Art"
+    >
+  </a>
+
+  <nav id="nav">
+
+    <a href="gallery.html">
+      Gallery
+    </a>
+
+    <a href="about.html">
+      About
+    </a>
+
+    <a href="curriculum vitae.html">
+      CV
+    </a>
+
+    <a href="contact.html">
+      Contact
+    </a>
+
+    <a
+      href="https://www.instagram.com/lauraschneiderfineart"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-icon"
+      aria-label="Instagram"
+    >
+      <img
+        src="icons/igicon.png"
+        alt="Instagram"
+      >
+    </a>
+
+  </nav>
+
+  <button
+    class="hamburger"
+    type="button"
+    onclick="toggleMenu()"
+    aria-label="Open menu"
+    aria-expanded="false"
+  >
+    ☰
+  </button>
+
+</header>
+
+
+<main class="about-section">
+
+  <div class="about-container">
+
+    <div class="about-text">
+
+      <div class="artist-heading">
+        <h1>Laura Schneider</h1>
+      </div>
+
+      <section class="statement">
+
+        <h2>Artist Statement</h2>
+
+        <p>
+          My paintings focus on light, colour, and reflection. I am drawn to glass objects because they constantly change depending on their surroundings, creating distortions, reflections, and unexpected relationships between colour and shape.
+        </p>
+
+        <p>
+          Working from observation, I use oil paint to study these shifting effects and to slow down the act of looking. What interests me is not only the object itself, but the way light transforms it. Transparent surfaces can reflect, refract, disappear, or become intensely present within the same image.
+        </p>
+
+        <p>
+          My background in photography and film has influenced the way I approach composition and lighting. I am interested in moments where familiar objects become visually ambiguous, revealing details that might otherwise have been overlooked.
+        </p>
+
+        <p>
+          Through painting, I aim to explore the tension between realism and perception, using ordinary subjects as a way to investigate the complexity of seeing.
+        </p>
+
+      </section>
+
+      <section class="bio">
+
+        <h2>Biography</h2>
+
+        <p>
+          Laura Schneider (b. 1997) is an independent artist from Ottawa, Ontario. She is a self-taught oil painter who studied graphic design, photography, and filmmaking at Algonquin College. Her paintings focus on still life subjects and are informed by her interest in light, colour, and observation.
+        </p>
+
+      </section>
+
+    </div>
+
+
+    <div class="about-image">
+
+      <img
+        src="images/laura_portrait_2026.jpg"
+        alt="Portrait of Laura Schneider"
+      >
+
+      <p class="photo-credit">
+        Photo by Xavier Paquette
+      </p>
+
+    </div>
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-content">
+
+    <p>
+      © Laura Schneider Fine Art 2026
+    </p>
+
+    <div class="footer-socials">
+
+      <a
+        href="https://www.instagram.com/lauraschneiderfineart"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Instagram
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+  const nav = document.getElementById("nav");
+  const hamburger = document.querySelector(".hamburger");
+
+  function toggleMenu() {
+    const isOpen = nav.classList.toggle("active");
+
+    hamburger.setAttribute(
+      "aria-expanded",
+      isOpen ? "true" : "false"
+    );
+  }
+
+  function closeMenu() {
+    nav.classList.remove("active");
+
+    hamburger.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+  }
+
+  document.addEventListener(
+    "pointerdown",
+    function (event) {
+      if (!nav.classList.contains("active")) {
+        return;
+      }
+
+      const clickedInsideNav =
+        nav.contains(event.target);
+
+      const clickedHamburger =
+        hamburger.contains(event.target);
+
+      if (
+        !clickedInsideNav &&
+        !clickedHamburger
+      ) {
+        closeMenu();
+      }
+    },
+    true
+  );
+
+  nav.addEventListener(
+    "click",
+    function (event) {
+      if (event.target.closest("a")) {
+        closeMenu();
+      }
+    }
+  );
+</script>
+
+</body>
+
+</html>

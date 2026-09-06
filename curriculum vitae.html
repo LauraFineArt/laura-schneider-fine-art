@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Laura Schneider Fine Art | Curriculum Vitae</title>
+
+  <meta
+    name="description"
+    content="Curriculum Vitae of Laura Schneider."
+  >
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="icons/favicon.png"
+  >
+</head>
+
+<body>
+
+<header>
+
+  <a
+    href="index.html"
+    class="logo"
+  >
+    <img
+      src="icons/lauralogo.png"
+      alt="Laura Schneider Fine Art"
+    >
+  </a>
+
+  <nav id="nav">
+
+    <a href="gallery.html">
+      Gallery
+    </a>
+
+    <a href="about.html">
+      About
+    </a>
+
+    <a href="curriculum vitae.html">
+      CV
+    </a>
+
+    <a href="contact.html">
+      Contact
+    </a>
+
+    <a
+      href="https://www.instagram.com/lauraschneiderfineart"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-icon"
+      aria-label="Instagram"
+    >
+      <img
+        src="icons/igicon.png"
+        alt="Instagram"
+      >
+    </a>
+
+  </nav>
+
+  <button
+    class="hamburger"
+    type="button"
+    onclick="toggleMenu()"
+    aria-label="Open menu"
+    aria-expanded="false"
+  >
+    ☰
+  </button>
+
+</header>
+
+
+<main class="about-section cv-section">
+
+  <div class="cv-container">
+
+    <div class="about-text">
+
+      <div class="artist-heading">
+        <h1>Curriculum Vitae</h1>
+      </div>
+
+
+      <section class="cv-category">
+
+        <h2>Exhibitions</h2>
+
+        <div class="cv-year">
+
+          <p>
+            <strong>2026</strong>
+          </p>
+
+          <p>
+            <em>
+              Headwaters Arts Fall Festival Juried Art Show &amp; Sale
+            </em>,
+            Headwaters Arts Gallery, Alton, Ontario
+          </p>
+
+          <p>
+            <em>Reflections</em>,
+            Art Circuit 2026,
+            The Back Alley Gallery, Hamilton, Ontario
+          </p>
+
+        </div>
+
+      </section>
+
+
+      <section class="cv-category">
+
+        <h2>Education</h2>
+
+        <div class="cv-entry">
+
+          <p>
+            <strong>2022</strong>
+          </p>
+
+          <p>
+            Diploma, Film &amp; Media Production<br>
+            Algonquin College, Ottawa, Ontario
+          </p>
+
+        </div>
+
+
+        <div class="cv-entry">
+
+          <p>
+            <strong>2020</strong>
+          </p>
+
+          <p>
+            Diploma, Photography<br>
+            Algonquin College, Ottawa, Ontario
+          </p>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-content">
+
+    <p>
+      © Laura Schneider Fine Art 2026
+    </p>
+
+    <div class="footer-socials">
+
+      <a
+        href="https://www.instagram.com/lauraschneiderfineart"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Instagram
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+  const nav = document.getElementById("nav");
+  const hamburger = document.querySelector(".hamburger");
+
+  function toggleMenu() {
+    const isOpen = nav.classList.toggle("active");
+
+    hamburger.setAttribute(
+      "aria-expanded",
+      isOpen ? "true" : "false"
+    );
+  }
+
+  function closeMenu() {
+    nav.classList.remove("active");
+    hamburger.setAttribute("aria-expanded", "false");
+  }
+
+  document.addEventListener(
+    "pointerdown",
+    function (event) {
+      if (!nav.classList.contains("active")) {
+        return;
+      }
+
+      const clickedInsideNav =
+        nav.contains(event.target);
+
+      const clickedHamburger =
+        hamburger.contains(event.target);
+
+      if (
+        !clickedInsideNav &&
+        !clickedHamburger
+      ) {
+        closeMenu();
+      }
+    },
+    true
+  );
+
+  nav.addEventListener(
+    "click",
+    function (event) {
+      if (event.target.closest("a")) {
+        closeMenu();
+      }
+    }
+  );
+</script>
+
+</body>
+
+</html>

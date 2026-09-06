@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Painting | Laura Schneider Fine Art</title>
+
+  <meta
+    name="description"
+    content=""
+    id="meta-description"
+  >
+
+  <meta
+    property="og:type"
+    content="website"
+  >
+
+  <meta
+    property="og:title"
+    content=""
+    id="og-title"
+  >
+
+  <meta
+    property="og:description"
+    content=""
+    id="og-description"
+  >
+
+  <meta
+    property="og:image"
+    content=""
+    id="og-image"
+  >
+
+  <meta
+    property="og:url"
+    content=""
+    id="og-url"
+  >
+
+  <meta
+    property="og:site_name"
+    content="Laura Schneider Fine Art"
+  >
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="icons/favicon.png"
+  >
+
+  <script
+    type="application/ld+json"
+    id="structured-data"
+  ></script>
+</head>
+
+<body>
+
+<header>
+
+  <a
+    href="index.html"
+    class="logo"
+  >
+    <img
+      src="icons/lauralogo.png"
+      alt="Laura Schneider Fine Art"
+    >
+  </a>
+
+  <nav id="nav">
+
+    <a href="gallery.html">
+      Gallery
+    </a>
+
+    <a href="about.html">
+      About
+    </a>
+
+    <a href="curriculum vitae.html">
+      CV
+    </a>
+
+    <a href="contact.html">
+      Contact
+    </a>
+
+    <a
+      href="https://www.instagram.com/lauraschneiderfineart"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-icon"
+      aria-label="Instagram"
+    >
+      <img
+        src="icons/igicon.png"
+        alt="Instagram"
+      >
+    </a>
+
+  </nav>
+
+  <button
+    class="hamburger"
+    type="button"
+    onclick="toggleMenu()"
+    aria-label="Open menu"
+    aria-expanded="false"
+  >
+    ☰
+  </button>
+
+</header>
+
+
+<a
+  href="gallery.html"
+  class="back-link"
+>
+  ← Back to Paintings
+</a>
+
+
+<section class="painting-page">
+
+  <div class="painting-viewer">
+
+    <a
+      href="#"
+      id="previous-painting"
+      class="nav-arrow left"
+      aria-label="Previous painting"
+    >
+      ←
+    </a>
+
+    <img
+      src=""
+      alt=""
+      id="painting-image"
+      class="painting-img"
+    >
+
+    <a
+      href="#"
+      id="next-painting"
+      class="nav-arrow right"
+      aria-label="Next painting"
+    >
+      →
+    </a>
+
+  </div>
+
+
+  <div class="painting-meta">
+
+    <h2 id="painting-title"></h2>
+
+    <p
+      class="meta-line"
+      id="painting-size"
+    ></p>
+
+    <p
+      class="meta-line"
+      id="painting-medium"
+    ></p>
+
+    <p
+      class="meta-line"
+      id="painting-year"
+    ></p>
+
+    <p
+      class="meta-line"
+      id="painting-availability"
+    ></p>
+
+    <button
+      type="button"
+      class="inquiry-button"
+      id="inquiry-button"
+    >
+      Inquire
+    </button>
+
+  </div>
+
+</section>
+
+
+<!-- Full-screen painting viewer -->
+
+<div
+  class="lightbox"
+  id="lightbox"
+  aria-hidden="true"
+>
+
+  <button
+    type="button"
+    class="lightbox-close"
+    id="lightbox-close"
+    aria-label="Close full-screen image"
+  >
+    ×
+  </button>
+
+  <button
+    type="button"
+    class="lightbox-arrow lightbox-prev"
+    id="lightbox-prev"
+    aria-label="Previous painting"
+  >
+    ←
+  </button>
+
+  <img
+    src=""
+    alt=""
+    class="lightbox-image"
+    id="lightbox-image"
+  >
+
+  <button
+    type="button"
+    class="lightbox-arrow lightbox-next"
+    id="lightbox-next"
+    aria-label="Next painting"
+  >
+    →
+  </button>
+
+</div>
+
+
+<!-- Purchase inquiry popup -->
+
+<div
+  class="inquiry-modal"
+  id="inquiry-modal"
+  aria-hidden="true"
+>
+
+  <div class="inquiry-box">
+
+    <button
+      type="button"
+      class="inquiry-close"
+      id="inquiry-close"
+      aria-label="Close purchase inquiry form"
+    >
+      ×
+    </button>
+
+    <p class="inquiry-subtitle">
+      You are inquiring about
+    </p>
+
+    <p class="inquiry-title">
+      <strong id="inquiry-artwork"></strong>
+    </p>
+
+    <form
+      id="inquiry-form"
+      action="https://formspree.io/f/xvzewagn"
+      method="POST"
+    >
+
+      <input
+        type="hidden"
+        id="artwork-field"
+        name="artwork"
+      >
+
+      <input
+        type="text"
+        name="name"
+        placeholder="Name"
+        required
+      >
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        required
+      >
+
+      <textarea
+        name="message"
+        placeholder="Type your message here"
+        rows="4"
+        required
+      ></textarea>
+
+      <button
+        type="submit"
+        class="send-inquiry-button"
+      >
+        Send
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+<footer>
+
+  <div class="footer-content">
+
+    <p>
+      © Laura Schneider Fine Art 2026
+    </p>
+
+    <div class="footer-socials">
+
+      <a
+        href="https://www.instagram.com/lauraschneiderfineart"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Instagram
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script src="painting.js"></script>
+
+</body>
+
+</html>

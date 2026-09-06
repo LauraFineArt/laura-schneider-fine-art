@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Message Sent | Laura Schneider Fine Art</title>
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="icons/favicon.png"
+  >
+</head>
+
+<body>
+
+<header>
+
+  <a
+    href="index.html"
+    class="logo"
+  >
+    <img
+      src="icons/lauralogo.png"
+      alt="Laura Schneider Fine Art"
+    >
+  </a>
+
+  <nav id="nav">
+
+    <a href="gallery.html">
+      Gallery
+    </a>
+
+    <a href="about.html">
+      About
+    </a>
+
+    <a href="curriculum vitae.html">
+      CV
+    </a>
+
+    <a href="contact.html">
+      Contact
+    </a>
+
+    <a
+      href="https://www.instagram.com/lauraschneiderfineart"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-icon"
+      aria-label="Instagram"
+    >
+      <img
+        src="icons/igicon.png"
+        alt="Instagram"
+      >
+    </a>
+
+  </nav>
+
+  <button
+    class="hamburger"
+    type="button"
+    onclick="toggleMenu()"
+    aria-label="Open menu"
+    aria-expanded="false"
+  >
+    ☰
+  </button>
+
+</header>
+
+
+<main class="thank-you-page">
+
+  <h1>
+    Your message was sent.
+  </h1>
+
+  <a
+    href="index.html"
+    class="thank-you-back-link"
+  >
+    ← Return Home
+  </a>
+
+</main>
+
+
+<footer>
+
+  <div class="footer-content">
+
+    <p>
+      © Laura Schneider Fine Art 2026
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script>
+  const nav = document.getElementById("nav");
+  const hamburger = document.querySelector(".hamburger");
+
+  function toggleMenu() {
+    const isOpen = nav.classList.toggle("active");
+
+    hamburger.setAttribute(
+      "aria-expanded",
+      isOpen ? "true" : "false"
+    );
+  }
+
+  function closeMenu() {
+    nav.classList.remove("active");
+    hamburger.setAttribute("aria-expanded", "false");
+  }
+
+  document.addEventListener(
+    "pointerdown",
+    function (event) {
+      if (!nav.classList.contains("active")) {
+        return;
+      }
+
+      const clickedInsideNav =
+        nav.contains(event.target);
+
+      const clickedHamburger =
+        hamburger.contains(event.target);
+
+      if (
+        !clickedInsideNav &&
+        !clickedHamburger
+      ) {
+        closeMenu();
+      }
+    },
+    true
+  );
+
+  nav.addEventListener(
+    "click",
+    function (event) {
+      if (event.target.closest("a")) {
+        closeMenu();
+      }
+    }
+  );
+</script>
+
+</body>
+
+</html>
