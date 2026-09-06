@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Laura Schneider Fine Art | Paintings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <img src="icons/lauralogo.png" alt="Laura Schneider Fine Art" />
+  </a>
+
+  <nav id="nav">
+    <a href="paintings.html">Paintings</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+
+    <a href="https://www.instagram.com/lauraschneiderfineart"
+       target="_blank"
+       class="social-icon"
+       aria-label="Instagram">
+      <img src="icons/igicon.png" alt="Instagram" />
+    </a>
+  </nav>
+
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+</header>
+
+<section class="gallery-section">
+  <div class="gallery">
+	  
+	  <a href="burning match.html" class="painting-link">
+      <img src="images/burning_match_2026.jpg" alt="Burning Match, 2026">
+    </a>
+
+    <a href="chandelier.html" class="painting-link">
+      <img src="images/chandelier_2026.jpg" alt="Chandelier, 2026">
+    </a>
+
+    <a href="spellbound.html" class="painting-link">
+      <img src="images/spellbound_2026.jpg" alt="Spellbound, 2026">
+    </a>
+
+    <a href="limes.html" class="painting-link smaller-painting">
+  <img src="images/limes_2026.jpg" alt="Limes, 2026">
+</a>
+
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <p>©2026 Laura Schneider Fine Art</p>
+    <div class="footer-socials">
+      <a href="https://www.instagram.com/lauraschneiderfineart" target="_blank">Instagram</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("nav").classList.toggle("active");
+  }
+</script>
+
+</body>
+</html>

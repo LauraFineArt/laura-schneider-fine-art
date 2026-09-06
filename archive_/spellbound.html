@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spellbound, 2026 | Laura Schneider Fine Art</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <img src="icons/lauralogo.png" alt="Laura Schneider Fine Art">
+  </a>
+
+  <nav id="nav">
+    <a href="paintings.html">Paintings</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+
+    <a
+      href="https://www.instagram.com/lauraschneiderfineart"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="social-icon"
+    >
+      <img src="icons/igicon.png" alt="Instagram">
+    </a>
+  </nav>
+
+  <div class="hamburger" onclick="toggleMenu()">☰</div>
+</header>
+
+<a href="paintings.html" class="back-link">
+  ← Back to Paintings
+</a>
+
+<section class="painting-page">
+
+  <div class="painting-viewer">
+    <a href="chandelier.html" class="nav-arrow left">←</a>
+
+    <img
+      src="images/spellbound_2026.jpg"
+      alt="Spellbound, 2026"
+      class="painting-img"
+    >
+
+    <a href="limes.html" class="nav-arrow right">→</a>
+  </div>
+
+  <div class="painting-meta">
+    <h2>Spellbound</h2>
+    <p class="meta-line">16" × 20"</p>
+    <p class="meta-line">Oil on Canvas</p>
+    <p class="meta-line">2026</p>
+
+    <button
+      class="inquiry-button"
+      data-artwork="Spellbound"
+      type="button"
+    >
+      Inquire to Purchase
+    </button>
+  </div>
+
+</section>
+
+<footer>
+  <div class="footer-content">
+    <p>© Laura Schneider Fine Art 2026</p>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    document.getElementById("nav").classList.toggle("active");
+  }
+</script>
+
+</body>
+</html>

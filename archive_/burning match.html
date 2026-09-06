@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <title>Burning Match, 2026 | Laura Schneider Fine Art</title>
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html" class="logo">
+      <img
+        src="icons/lauralogo.png"
+        alt="Laura Schneider Fine Art"
+      >
+    </a>
+
+    <nav id="nav">
+      <a href="paintings.html">Paintings</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+
+      <a
+        href="https://www.instagram.com/lauraschneiderfineart"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="social-icon"
+      >
+        <img
+          src="icons/igicon.png"
+          alt="Instagram"
+        >
+      </a>
+    </nav>
+
+    <div
+      class="hamburger"
+      onclick="toggleMenu()"
+    >
+      ☰
+    </div>
+  </header>
+
+  <a href="paintings.html" class="back-link">
+    ← Back to Paintings
+  </a>
+
+  <section class="painting-page">
+
+    <div class="painting-viewer">
+
+      <a
+        href="burning match.html"
+        class="nav-arrow left"
+      >
+        ←
+      </a>
+
+      <img
+        src="images/burning_match_2026.jpg"
+        alt="Burning Match, 2026"
+        class="painting-img"
+      >
+
+      <a
+        href="chandelier.html"
+        class="nav-arrow right"
+      >
+        →
+      </a>
+
+    </div>
+
+    <div class="painting-meta">
+
+      <h2>Burning Match</h2>
+
+      <p class="meta-line">20" × 24"</p>
+      <p class="meta-line">Oil on Canvas</p>
+      <p class="meta-line">2026</p>
+
+      <button
+        class="inquiry-button"
+        data-artwork="Burning Match"
+        type="button"
+      >
+        Inquire to Purchase
+      </button>
+
+    </div>
+
+  </section>
+
+  <div
+    class="inquiry-modal"
+    id="inquiry-modal"
+    aria-hidden="true"
+  >
+
+    <div class="inquiry-box">
+
+      <button
+        type="button"
+        class="inquiry-close"
+        id="inquiry-close"
+        aria-label="Close purchase inquiry form"
+      >
+        ×
+      </button>
+
+      <p class="inquiry-subtitle">
+        You are inquiring about
+      </p>
+
+      <p class="inquiry-title">
+        <strong id="inquiry-artwork"></strong>
+      </p>
+
+      <form
+       id="inquiry-form"
+       action="https://formspree.io/f/xvzewagn"
+       method="POST"
+      >
+
+        <input
+          type="hidden"
+          id="artwork-field"
+          name="artwork"
+        >
+
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Name"
+          required
+        >
+
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Email"
+          required
+        >
+
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Type your message here"
+          rows="6"
+          required
+        ></textarea>
+
+        <button
+          type="submit"
+          class="send-inquiry-button"
+        >
+          Send Inquiry
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <p>© Laura Schneider Fine Art 2026</p>
+    </div>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document
+        .getElementById("nav")
+        .classList
+        .toggle("active");
+    }
+
+    const inquiryButton =
+      document.querySelector(".inquiry-button");
+
+    const inquiryModal =
+      document.getElementById("inquiry-modal");
+
+    const closeButton =
+      document.getElementById("inquiry-close");
+
+    const artworkName =
+      document.getElementById("inquiry-artwork");
+
+    const artworkField =
+      document.getElementById("artwork-field");
+
+    inquiryButton.addEventListener("click", function () {
+      const artworkTitle = inquiryButton.dataset.artwork;
+
+      artworkName.textContent = artworkTitle;
+      artworkField.value = artworkTitle;
+
+      inquiryModal.classList.add("is-open");
+      inquiryModal.setAttribute("aria-hidden", "false");
+    });
+
+    closeButton.addEventListener("click", function () {
+      inquiryModal.classList.remove("is-open");
+      inquiryModal.setAttribute("aria-hidden", "true");
+    });
+  </script>
+
+</body>
+</html>
