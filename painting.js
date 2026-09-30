@@ -52,7 +52,7 @@ const paintings = [
     size: '20" × 24"',
     medium: "Oil on Canvas",
     year: "2026",
-    availability: "Available",
+    availability: "SOLD",
     description:
       "Vortex (2026), an original oil painting by Laura Schneider of a green bowl surrounded by reflections."
   },
