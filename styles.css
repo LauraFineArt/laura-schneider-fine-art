@@ -458,6 +458,9 @@ nav a {
 .back-link:hover {
   color: #000;
 }
+#painting-availability {
+  font-weight: bold;
+}
 
 
 /* =============== INQUIRY BUTTON =============== */
