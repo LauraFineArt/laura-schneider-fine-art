@@ -46,6 +46,18 @@ nav.addEventListener("click", function (event) {
 
 const paintings = [
   {
+    slug: "phantom",
+    title: "Phantom",
+    image: "images/phantom_2026.jpg",
+    size: '24" × 30"',
+    medium: "Oil on Canvas",
+    year: "2026",
+    availability: "Available",
+    description:
+      "Phantom (2026), a dark surreal oil painting by Laura Schneider of a green bowl surrounded by reflections."
+  },
+
+  {
     slug: "vortex",
     title: "Vortex",
     image: "images/vortex_2026.jpg",
